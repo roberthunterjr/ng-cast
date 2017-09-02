@@ -1,12 +1,14 @@
 angular.module('video-player')
 .component('videoList', {
   bindings: {
-    videos: '<'
+    videos: '<',
+    current: '='
   },
   controller : function () {
     // this.videos = videos;
-    this.onClick = function () {
-      console.log("Clicked");
+    this.onClick = function (newCurrent) {
+      console.log("Our new current is",newCurrent);
+      this.current = newCurrent;
     };
   },
   //property: window.exampleVideoData
